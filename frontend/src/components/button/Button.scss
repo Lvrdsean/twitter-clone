@@ -1,0 +1,18 @@
+@use "@sass/colors" as colors;
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    color: colors.$black;
+    border: none;
+    padding: 9px;
+    transition: all ease-out 300ms;
+    overflow: hidden;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.9;
+    }
+}
