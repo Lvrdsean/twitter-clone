@@ -26,6 +26,12 @@
             width: 18px;
             margin-right: 8px;
         }
+        &--modal {
+            width: 25px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 10px;
+        }
     }
 
     &__account {
@@ -53,6 +59,23 @@
             color: colors.$blue;
             margin-bottom: 5%;
         }
+        &--next {
+            margin-top: 8%;
+            margin-bottom: 8%;
+        }
+        &--forgot_password {
+            background-color: black;
+            border-color: white;
+            border-style: solid;
+            border-width: 1px;
+            color: white;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        &--modal {
+            margin-top: 5%;
+            margin-bottom: 8%;
+        }
     }
 
     &__divider {
@@ -60,7 +83,7 @@
         align-items: center;
         text-align: center;
         margin-top: 8px;
-        margin-bottom: 5px;
+        margin-bottom: 16px;
         gap: 8px;
 
         &::before,
@@ -81,7 +104,12 @@
 
         &--blue {
             color: colors.$blue;
+            margin-left: 1%;
             margin-right: 1%;
+        }
+        &--no_account {
+            color: colors.$gray;
+            margin-top: 15%;
         }
     }
     &__footer_text {
@@ -95,5 +123,37 @@
         span {
             white-space: nowrap;
         }
+    }
+
+    &__linkish {
+        color: inherit;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &--blue {
+            color: colors.$blue;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-left: 1%;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__signin {
+        max-width: 600px;
+        max-height: 650px;
+        justify-items: stretch;
+        padding-top: 15px;
+        padding-bottom: 100px;
+        padding-left: 140px;
+        padding-right: 140px;
     }
 }
