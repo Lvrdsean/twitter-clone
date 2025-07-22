@@ -58,13 +58,22 @@ h6 {
 h1 {
     color: var(--text-color);
     font-feature-settings: "liga" off;
+    font-size: 31px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 225%;
+}
+
+h2 {
+    color: var(--text-color);
+    font-feature-settings: "liga" off;
     font-size: 23px;
     font-style: normal;
     font-weight: 700;
     line-height: 175%;
 }
 
-h2 {
+h3 {
     color: var(--text-color);
     font-feature-settings: "liga" off;
     font-size: 20px;
