@@ -1,0 +1,68 @@
+@use "@sass/colors" as colors;
+
+.input {
+    position: relative;
+
+    input {
+        width: 100%;
+        padding: 12px;
+        padding-bottom: 20px;
+        border: 1px solid colors.$gray;
+        border-radius: 4px;
+        background: black;
+        color: white;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    label {
+        position: absolute;
+        left: 10px;
+        top: 16px;
+        font-size: 18px;
+        color: colors.$gray;
+        pointer-events: none;
+        transition: all 0.2s ease;
+    }
+
+    &__char_count {
+        position: absolute;
+        top: 6px;
+        right: 10px;
+        font-size: 12px;
+        color: colors.$gray;
+    }
+
+    &__error {
+        color: red;
+        font-size: 12px;
+        margin-top: 4px;
+        display: block;
+    }
+
+    &__active {
+        label {
+            top: 6px;
+            font-size: 12px;
+            color: colors.$blue;
+        }
+
+        input {
+            border-color: colors.$blue;
+            padding-top: 24px;
+            padding-bottom: 8px;
+            padding-left: 9px;
+            font-size: 18px;
+        }
+
+        &--error {
+            label {
+                color: red;
+            }
+
+            input {
+                border-color: red;
+            }
+        }
+    }
+}
