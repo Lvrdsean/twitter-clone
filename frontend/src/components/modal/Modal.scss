@@ -1,0 +1,32 @@
+@use "@sass/colors" as colors;
+
+.modal {
+    &__overlay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(36, 45, 52, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    &__content {
+        background-color: black;
+        border-radius: 16px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__close {
+        position: absolute;
+        top: 6px;
+        left: 16px;
+        font-size: 28px;
+        color: white;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}
