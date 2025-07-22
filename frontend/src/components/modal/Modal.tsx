@@ -22,7 +22,11 @@ const Modal: React.FC<ModalProps> = ({
                 className={`modal__content ${className}`}
                 onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
             >
-                <button className="modal__close" onClick={onClose}>
+                <button
+                    className="modal__close"
+                    onClick={onClose}
+                    title="Close"
+                >
                     &times;
                 </button>
                 {children}
