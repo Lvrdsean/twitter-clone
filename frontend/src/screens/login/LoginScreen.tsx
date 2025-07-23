@@ -11,7 +11,47 @@ const Login = () => {
     // state
     const [isCreateModalOpen, setCreateModalOpen] = useState(false);
     const [isSignInModalOpen, setSignInModalOpen] = useState(false);
+    const [nameError, setNameError] = useState("");
+    const [phoneError, setPhoneError] = useState("");
+    const [touched, setTouched] = useState(false);
     const [identifier, setIdentifier] = useState("");
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [month, setMonth] = useState("");
+    const [day, setDay] = useState("");
+    const [year, setYear] = useState("");
+
+    // event handlers
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        setName(value);
+
+        // Mark the field as "touched" once the user types anything
+        if (!touched && value.length > 0) {
+            setTouched(true);
+        }
+
+        // Only show error if field is empty AFTER being touched
+        if (touched && value.trim() === "") {
+            setNameError("What's your name?");
+        } else {
+            setNameError("");
+        }
+    };
+
+    const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+
+        // Regex to match only digits
+        const isNumeric = /^\d*$/.test(value);
+
+        if (isNumeric) {
+            setPhone(value);
+            setPhoneError(""); // clear error if valid
+        } else {
+            setPhoneError("Please enter a valid phone number.");
+        }
+    };
 
     return (
         <div className="login__screen">
@@ -61,12 +101,63 @@ const Login = () => {
                 <Modal
                     isOpen={isCreateModalOpen}
                     onClose={() => setCreateModalOpen(false)}
+                    className="login__create"
                 >
                     <img src={Logo} className="login__logo--modal" alt="logo" />
-                    <h1>Create your account</h1>
-                    <p>This is where you create your account.</p>
+                    <h1 className="login__create--title">
+                        Create your account
+                    </h1>
+                    <Input
+                        placeholder="Name"
+                        value={name}
+                        onChange={handleChange}
+                        hasError={!!nameError}
+                        error={nameError}
+                        charCount={true}
+                        maxChars={50}
+                    />
+                    <Input
+                        placeholder="Phone"
+                        value={phone}
+                        onChange={handlePhoneChange}
+                        hasError={!!phoneError}
+                        error={phoneError}
+                    />
+                    <p className={`p1-r ${"login__create--linkish"}`}>
+                        Use email instead
+                    </p>
+                    <p className="p1-b">Date of birth</p>
+                    <p className="login__create--gray">
+                        This will not be shown publicly. Confirm your own age,
+                        even if this account is for a business, a pet, or
+                        something else.
+                    </p>
+                    <div className="login__create--dob">
+                        <Input
+                            placeholder="Month"
+                            value={month}
+                            onChange={(e) => setMonth(e.target.value)}
+                            className="login__create--month"
+                        />
+                        <Input
+                            placeholder="Day"
+                            value={day}
+                            onChange={(e) => setDay(e.target.value)}
+                        />
+                        <Input
+                            placeholder="Year"
+                            value={year}
+                            onChange={(e) => setYear(e.target.value)}
+                            className="login__create--year"
+                        />
+                    </div>
+                    <Button
+                        onClick={() => {}}
+                        className={`p1-b ${"login__create--next"}`}
+                    >
+                        Next
+                    </Button>
                 </Modal>
-
                 <Modal
                     isOpen={isSignInModalOpen}
                     onClose={() => setSignInModalOpen(false)}

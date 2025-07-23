@@ -26,6 +26,7 @@
             width: 18px;
             margin-right: 8px;
         }
+
         &--modal {
             width: 25px;
             margin-left: auto;
@@ -55,14 +56,17 @@
             margin-top: 5%;
             margin-bottom: 5%;
         }
+
         &--blue_text {
             color: colors.$blue;
             margin-bottom: 5%;
         }
+
         &--next {
             margin-top: 8%;
             margin-bottom: 8%;
         }
+
         &--forgot_password {
             background-color: black;
             border-color: white;
@@ -72,6 +76,7 @@
             margin-top: 5%;
             margin-bottom: 5%;
         }
+
         &--modal {
             margin-top: 5%;
             margin-bottom: 8%;
@@ -93,10 +98,12 @@
             height: 1px;
             background-color: colors.$gray;
         }
+
         p {
             color: colors.$gray;
         }
     }
+
     &__terms {
         text-align: center;
         color: colors.$gray;
@@ -107,11 +114,13 @@
             margin-left: 1%;
             margin-right: 1%;
         }
+
         &--no_account {
             color: colors.$gray;
             margin-top: 15%;
         }
     }
+
     &__footer_text {
         display: flex;
         flex-wrap: wrap;
@@ -147,6 +156,7 @@
             }
         }
     }
+
     &__signin {
         max-width: 600px;
         max-height: 650px;
@@ -155,5 +165,61 @@
         padding-bottom: 100px;
         padding-left: 140px;
         padding-right: 140px;
+    }
+
+    &__create {
+        max-width: 600px;
+        max-height: 650px;
+        justify-items: stretch;
+        padding-top: 15px;
+        padding-bottom: 100px;
+        padding-left: 80px;
+        padding-right: 80px;
+
+        &--title {
+            margin-bottom: 20px;
+        }
+
+        &--linkish {
+            text-align: right;
+            color: colors.$blue;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-left: 1%;
+            margin-bottom: 20px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &--gray {
+            margin-top: 8px;
+            color: colors.$gray;
+            line-height: 110%;
+        }
+
+        &--dob {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        &--month {
+            margin-right: 175px;
+        }
+
+        &--year {
+            margin-right: 50px;
+        }
+
+        &--next {
+            margin-top: 11%;
+            padding: 16px;
+            font-size: 18px;
+        }
     }
 }
