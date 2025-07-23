@@ -7,6 +7,7 @@ type InputProps = {
     hasError?: boolean;
     charCount?: boolean;
     maxChars?: number;
+    className?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 const Input: React.FC<InputProps> = ({
@@ -15,6 +16,7 @@ const Input: React.FC<InputProps> = ({
     hasError = false,
     charCount = false,
     maxChars,
+    className,
     ...props
 }) => {
     const [focused, setFocused] = useState(false);
@@ -33,6 +35,7 @@ const Input: React.FC<InputProps> = ({
         >
             <label className="p1-r">{placeholder}</label>
             <input
+                className={className}
                 maxLength={maxChars}
                 {...props}
                 onFocus={(e) => {
@@ -44,7 +47,7 @@ const Input: React.FC<InputProps> = ({
                     props.onBlur?.(e);
                 }}
             />
-            {charCount && maxChars && (
+            {charCount && maxChars && isActive && (
                 <span className={`p2-r ${"input__char_count"}`}>
                     {currentLength} / {maxChars}
                 </span>
