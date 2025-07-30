@@ -1,0 +1,86 @@
+@use "@sass/colors" as colors;
+
+.dropdown {
+    position: relative;
+    margin-bottom: 20px;
+
+    label {
+        position: absolute;
+        left: 10px;
+        top: 16px;
+        font-size: 18px;
+        color: colors.$gray;
+        pointer-events: none;
+        transition: all 0.2s ease;
+        z-index: 1;
+    }
+
+    select {
+        width: 100%;
+        padding: 12px;
+        padding-bottom: 20px;
+        border: 1px solid colors.$gray;
+        border-radius: 4px;
+        background: black;
+        color: colors.$gray;
+        outline: none;
+        appearance: none;
+        transition: border-color 0.3s;
+        cursor: pointer;
+    }
+
+    &__container {
+        position: relative;
+    }
+
+    &__chevron {
+        position: absolute;
+        right: 15px;
+        top: 29px;
+        transform: translateY(-50%);
+        color: colors.$gray;
+        pointer-events: none;
+    }
+
+    &__error {
+        color: red;
+        font-size: 12px;
+        display: block;
+        min-height: 12px;
+
+        select {
+            border-color: red;
+            padding-top: 21px;
+            padding-bottom: 8px;
+            padding-left: 9px;
+            font-size: 18px;
+        }
+    }
+
+    &__active {
+        label {
+            top: 6px;
+            font-size: 12px;
+            color: colors.$blue;
+        }
+
+        select {
+            border-color: colors.$blue;
+            padding-top: 21px;
+            padding-bottom: 8px;
+            padding-left: 9px;
+            font-size: 18px;
+            color: white;
+        }
+
+        &--error {
+            label {
+                color: red;
+            }
+
+            select {
+                border-color: red;
+            }
+        }
+    }
+}
