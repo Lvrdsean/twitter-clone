@@ -13,6 +13,7 @@ const Login = () => {
     // state
     const [isCreateModalOpen, setCreateModalOpen] = useState(false);
     const [isSignInModalOpen, setSignInModalOpen] = useState(false);
+    const [isSigningIn, setIsSigningIn] = useState(true);
     const [emailTypingTimeout, setEmailTypingTimeout] =
         useState<NodeJS.Timeout | null>(null);
     const [useEmail, setUseEmail] = useState(false);
@@ -258,15 +259,14 @@ const Login = () => {
                                 error={emailError}
                             />
                         )}
-                        <button
-                            type="button"
-                            className="p1-r login__create--linkish"
+                        <Button
                             onClick={() => setUseEmail(!useEmail)}
+                            className="p1-r login__create--linkish"
                         >
                             {useEmail
                                 ? "Use phone instead"
                                 : "Use email instead"}
-                        </button>
+                        </Button>
                         <p className="p1-b">Date of birth</p>
                         <p className="login__create--gray">
                             This will not be shown publicly. Confirm your own
@@ -318,51 +318,132 @@ const Login = () => {
                 </Modal>
                 <Modal
                     isOpen={isSignInModalOpen}
-                    onClose={() => setSignInModalOpen(false)}
+                    onClose={() => {
+                        setSignInModalOpen(false);
+                        setIsSigningIn(true);
+                    }}
                     className="login__signin"
                 >
-                    <img src={Logo} className="login__logo--modal" alt="logo" />
-                    <h1>Sign in to X</h1>
-                    <Button onClick={() => {}} className="login__button--modal">
+                    <div className="login__signin--container">
                         <img
-                            src={Google}
-                            className="login__logo--apple_google"
-                            alt="google"
+                            src={Logo}
+                            className="login__logo--modal"
+                            alt="logo"
                         />
-                        Sign up with Google
-                    </Button>
-                    <Button onClick={() => {}} className="login__button">
-                        <img
-                            src={Apple}
-                            className="login__logo--apple_google"
-                            alt="apple"
-                        />
-                        Sign up with Apple
-                    </Button>
-                    <div className="login__divider">
-                        <p>OR</p>
+
+                        {isSigningIn ? (
+                            <>
+                                <h1>Sign in to X</h1>
+                                <Button
+                                    onClick={() => {}}
+                                    className="login__button--modal"
+                                >
+                                    <img
+                                        src={Google}
+                                        className="login__logo--apple_google"
+                                        alt="google"
+                                    />
+                                    Sign in with Google
+                                </Button>
+                                <Button
+                                    onClick={() => {}}
+                                    className="login__button"
+                                >
+                                    <img
+                                        src={Apple}
+                                        className="login__logo--apple_google"
+                                        alt="apple"
+                                    />
+                                    Sign in with Apple
+                                </Button>
+                                <div className="login__divider">
+                                    <p>OR</p>
+                                </div>
+                                <Input
+                                    placeholder="Phone, email, or username"
+                                    value={identifier}
+                                    onChange={(e) =>
+                                        setIdentifier(e.target.value)
+                                    }
+                                />
+                                <Button
+                                    onClick={() => {}}
+                                    className="p1-b login__button--next"
+                                >
+                                    Next
+                                </Button>
+                                <Button
+                                    onClick={() => {}}
+                                    className="p1-b login__button--forgot_password"
+                                >
+                                    Forgot password?
+                                </Button>
+                                <p className="p1-r login__terms--no_account">
+                                    Don't have an account?
+                                    <Button
+                                        onClick={() => setIsSigningIn(false)}
+                                        className="p1-r login__signin--linkish"
+                                    >
+                                        Sign up
+                                    </Button>
+                                </p>
+                            </>
+                        ) : (
+                            <>
+                                <h1>Join X today</h1>
+                                <Button
+                                    onClick={() => {}}
+                                    className="login__signin--google_button"
+                                >
+                                    <img
+                                        src={Google}
+                                        className="login__logo--apple_google"
+                                        alt="google"
+                                    />
+                                    Sign up with Google
+                                </Button>
+                                <Button
+                                    onClick={() => {}}
+                                    className="login__signin--apple_button"
+                                >
+                                    <img
+                                        src={Apple}
+                                        className="login__logo--apple_google"
+                                        alt="apple"
+                                    />
+                                    Sign up with Apple
+                                </Button>
+                                <div className="login__signin--divider">
+                                    <p>OR</p>
+                                </div>
+                                <Button
+                                    onClick={() => setCreateModalOpen(true)}
+                                    className="login__signin--create_account"
+                                >
+                                    Create account
+                                </Button>
+                                <p className="p2-r login__signin--terms">
+                                    By signing up, you agree to absolutely
+                                    <span className="login__signin--terms--blue">
+                                        nothing
+                                    </span>{" "}
+                                    because this is a
+                                    <span className="login__signin--terms--blue">
+                                        clone.
+                                    </span>
+                                </p>
+                                <p className="p1-r login__signin--terms--no_account">
+                                    Have an account already?
+                                    <Button
+                                        onClick={() => setIsSigningIn(true)}
+                                        className="p1-r login__signin--linkish"
+                                    >
+                                        Log in
+                                    </Button>
+                                </p>
+                            </>
+                        )}
                     </div>
-                    <Input
-                        placeholder="Phone, email, or username"
-                        value={identifier}
-                        onChange={(e) => setIdentifier(e.target.value)}
-                    />
-                    <Button
-                        onClick={() => {}}
-                        className={`p1-b ${"login__button--next"}`}
-                    >
-                        Next
-                    </Button>
-                    <Button
-                        onClick={() => {}}
-                        className={`p1-b ${"login__button--forgot_password"}`}
-                    >
-                        Forgot password?
-                    </Button>
-                    <p className={`p1-r ${"login__terms--no_account"}`}>
-                        Don't have an account?
-                        <span className="login__linkish--blue">Sign up</span>
-                    </p>
                 </Modal>
             </div>
             <footer>
