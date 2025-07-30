@@ -170,24 +170,31 @@
     &__create {
         max-width: 600px;
         max-height: 650px;
-        justify-items: stretch;
         padding-top: 15px;
         padding-bottom: 100px;
         padding-left: 80px;
         padding-right: 80px;
+
+        &--container {
+            min-width: 440px;
+            justify-items: stretch;
+        }
 
         &--title {
             margin-bottom: 20px;
         }
 
         &--linkish {
-            text-align: right;
+            background: none;
+            border: none;
             color: colors.$blue;
+            white-space: nowrap;
             cursor: pointer;
             text-decoration: none;
             transition: all 0.2s ease;
-            margin-left: 1%;
+            margin-left: 72%;
             margin-bottom: 20px;
+            padding: 0px;
 
             &:hover {
                 text-decoration: underline;
@@ -210,14 +217,21 @@
 
         &--month {
             margin-right: 175px;
+            margin-bottom: 4px;
+        }
+
+        &--day {
+            margin-right: 55px;
+            margin-bottom: 4px;
         }
 
         &--year {
-            margin-right: 50px;
+            margin-right: 75px;
+            margin-bottom: 4px;
         }
 
         &--next {
-            margin-top: 11%;
+            margin-top: 30px;
             padding: 16px;
             font-size: 18px;
         }
