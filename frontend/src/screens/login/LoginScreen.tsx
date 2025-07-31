@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import Input from "../../components/input/Input";
 import Dropdown from "../../components/dropdown/Dropdown";
 import { monthOptions, dayOptions, yearOptions } from "../../types/dropdown";
+import AuthButton from "./components/AuthButton";
+import Footer from "./components/Footer";
 
 const Login = () => {
     // state
@@ -179,22 +181,20 @@ const Login = () => {
             <div className="login__content">
                 <img src={Logo} className="login__logo" alt="logo" />
                 <h2 className="login__account">Create an account</h2>
-                <Button onClick={() => {}} className="login__button">
-                    <img
-                        src={Google}
-                        className="login__logo--apple_google"
-                        alt="google"
-                    />
+                <AuthButton
+                    onClick={() => {}}
+                    icon={Google}
+                    className="login__button"
+                >
                     Sign up with Google
-                </Button>
-                <Button onClick={() => {}} className="login__button">
-                    <img
-                        src={Apple}
-                        className="login__logo--apple_google"
-                        alt="apple"
-                    />
+                </AuthButton>
+                <AuthButton
+                    onClick={() => {}}
+                    icon={Apple}
+                    className="login__button"
+                >
                     Sign up with Apple
-                </Button>
+                </AuthButton>
                 <div className="login__divider">
                     <p>OR</p>
                 </div>
@@ -446,31 +446,7 @@ const Login = () => {
                     </div>
                 </Modal>
             </div>
-            <footer>
-                <p className={`p3-r ${"login__footer_text"}`}>
-                    <span className="login__linkish">About</span>
-                    <span>|</span>
-                    <span className="login__linkish">Get the X app</span>
-                    <span>|</span>
-                    <span className="login__linkish">Get the Grok app</span>
-                    <span>|</span>
-                    <span className="login__linkish">Careers</span>
-                    <span>|</span>
-                    <span className="login__linkish">Terms of Service</span>
-                    <span>|</span>
-                    <span className="login__linkish">Privacy Policy</span>
-                    <span>|</span>
-                    <span className="login__linkish">Cookie Policy</span>
-                    <span>|</span>
-                    <span className="login__linkish">Developers</span>
-                    <span>|</span>
-                    <span className="login__linkish">Advertising</span>
-                    <span>|</span>
-                    <span className="login__linkish">Settings</span>
-                    <span>|</span>
-                    <span>© 2025 LVRD Corp.</span>
-                </p>
-            </footer>
+            <Footer />
         </div>
     );
 };
