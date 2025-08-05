@@ -1,0 +1,113 @@
+@use "@sass/colors" as colors;
+
+.signin {
+    &__form {
+        max-width: 600px;
+        max-height: 650px;
+        padding-top: 15px;
+        padding-bottom: 100px;
+        padding-left: 140px;
+        padding-right: 140px;
+    }
+
+    &__container {
+        min-width: 320px;
+        justify-items: stretch;
+    }
+
+    &__logo {
+        width: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+
+        &--apple_google {
+            width: 18px;
+            margin-right: 8px;
+        }
+    }
+
+    &__button {
+        margin-top: 5%;
+        margin-bottom: 8%;
+
+        &--apple {
+            margin-bottom: 5%;
+        }
+
+        &--next {
+            margin-top: 8%;
+            margin-bottom: 8%;
+        }
+
+        &--forgot_password {
+            background-color: black;
+            border-color: white;
+            border-style: solid;
+            border-width: 1px;
+            color: white;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+    }
+
+    &__link {
+        display: inline;
+        background: none;
+        text-decoration: none;
+        color: colors.$blue;
+        border-radius: 0px;
+        padding: 0px;
+        margin-left: 1%;
+
+        &:hover {
+            text-decoration: underline;
+            opacity: 1;
+        }
+    }
+
+    &__divider {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-top: 8px;
+        margin-bottom: 16px;
+        gap: 8px;
+
+        &::before,
+        &::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: colors.$gray;
+        }
+
+        p {
+            color: colors.$gray;
+        }
+    }
+
+    &__create_account {
+        background-color: colors.$blue;
+        color: white;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    &__terms {
+        text-align: start;
+        color: colors.$gray;
+        margin-bottom: 25px;
+
+        &--blue {
+            color: colors.$blue;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        &--no_account {
+            color: colors.$gray;
+            margin-top: 15%;
+        }
+    }
+}
