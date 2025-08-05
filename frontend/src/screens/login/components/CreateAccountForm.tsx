@@ -181,11 +181,11 @@ const CreateAccountForm: React.FC<CreateAccountFormProps> = ({
         <Modal
             isOpen={isOpen}
             onClose={handleCloseCreateModal}
-            className="form__create"
+            className="create__form"
         >
-            <div className="form__container">
-                <img src={Logo} className="form__logo" alt="logo" />
-                <h1 className="form__title">Create your account</h1>
+            <div className="create__container">
+                <img src={Logo} className="create__logo" alt="logo" />
+                <h1 className="create__title">Create your account</h1>
                 <Input
                     placeholder="Name"
                     value={name}
@@ -214,22 +214,22 @@ const CreateAccountForm: React.FC<CreateAccountFormProps> = ({
                 )}
                 <Button
                     onClick={() => setUseEmail(!useEmail)}
-                    className="p1-r form__link"
+                    className="p1-r create__link"
                 >
                     {useEmail ? "Use phone instead" : "Use email instead"}
                 </Button>
                 <p className="p1-b">Date of birth</p>
-                <p className="form__description">
+                <p className="create__description">
                     This will not be shown publicly. Confirm your own age, even
                     if this account is for a business, a pet, or something else.
                 </p>
-                <div className="form__dob">
+                <div className="create__dob">
                     <Dropdown
                         placeholder="Month"
                         value={month}
                         onChange={handleDobChange(setMonth, setMonthError)}
                         options={monthOptions}
-                        className="form__month"
+                        className="create__month"
                         hasError={!!monthError}
                         error={monthError}
                     />
@@ -238,7 +238,7 @@ const CreateAccountForm: React.FC<CreateAccountFormProps> = ({
                         value={day}
                         onChange={handleDobChange(setDay, setDayError)}
                         options={dayOptions}
-                        className="form__day"
+                        className="create__day"
                         hasError={!!dayError}
                         error={dayError}
                     />
@@ -247,14 +247,14 @@ const CreateAccountForm: React.FC<CreateAccountFormProps> = ({
                         value={year}
                         onChange={handleDobChange(setYear, setYearError)}
                         options={yearOptions}
-                        className="form__year"
+                        className="create__year"
                         hasError={!!yearError}
                         error={yearError}
                     />
                 </div>
                 <Button
                     onClick={handleNextClick}
-                    className={`p1-b ${"form__next"}`}
+                    className={`p1-b ${"create__next"}`}
                 >
                     Next
                 </Button>
