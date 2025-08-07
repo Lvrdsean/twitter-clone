@@ -75,4 +75,20 @@
             }
         }
     }
+
+    &__container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    button {
+        background: none;
+        border: none;
+        position: absolute;
+        right: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
 }
