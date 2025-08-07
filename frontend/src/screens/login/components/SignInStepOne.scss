@@ -1,0 +1,68 @@
+@use "@sass/colors" as colors;
+
+.step_one {
+    &__button {
+        margin-top: 5%;
+        margin-bottom: 8%;
+
+        &--apple {
+            margin-bottom: 5%;
+        }
+
+        &--next {
+            margin-top: 8%;
+            margin-bottom: 8%;
+        }
+
+        &--forgot_password {
+            background-color: black;
+            border-color: white;
+            border-style: solid;
+            border-width: 1px;
+            color: white;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+    }
+
+    &__divider {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-top: 8px;
+        margin-bottom: 16px;
+        gap: 8px;
+
+        &::before,
+        &::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: colors.$gray;
+        }
+
+        p {
+            color: colors.$gray;
+        }
+    }
+
+    &__terms {
+        color: colors.$gray;
+        margin-top: 15%;
+    }
+
+    &__link {
+        display: inline;
+        background: none;
+        text-decoration: none;
+        color: colors.$blue;
+        border-radius: 0px;
+        padding: 0px;
+        margin-left: 1%;
+
+        &:hover {
+            text-decoration: underline;
+            opacity: 1;
+        }
+    }
+}

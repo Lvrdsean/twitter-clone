@@ -1,0 +1,44 @@
+@use "@sass/colors" as colors;
+
+.step_two {
+    &__container {
+        min-width: 440px;
+        justify-items: stretch;
+    }
+
+    &__link {
+        display: inline;
+        background: none;
+        text-decoration: none;
+        color: colors.$blue;
+        border-radius: 0px;
+        padding: 0px;
+        margin-left: 1%;
+
+        &--forgot_password {
+            display: inline;
+            background: none;
+            text-decoration: none;
+            color: colors.$blue;
+            border-radius: 0px;
+            padding: 0px;
+            margin-right: 0%;
+        }
+
+        &:hover {
+            text-decoration: underline;
+            opacity: 1;
+        }
+    }
+
+    &__button {
+        margin-top: 40%;
+        padding: 16px;
+        font-size: 18px;
+    }
+
+    &__terms {
+        color: colors.$gray;
+        margin-top: 5%;
+    }
+}
