@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Modal from "../../../components/modal/Modal";
 import Logo from "@/assets/images/logo-white.png";
+import ForgotPassword from "./ForgotPassword";
 import SignInStepOne from "./SignInStepOne";
 import SignInStepTwo from "./SignInStepTwo";
 import SignUp from "./SignUp";
@@ -22,6 +23,7 @@ const SignInForm: React.FC<SignInFormProps> = ({
     const navigate = useNavigate();
 
     // state
+    const [showForgotPasswordModal, setForgotPasswordModal] = useState(false);
     const [isSigningIn, setIsSigningIn] = useState(true);
     const [showPasswordModal, setShowPasswordModal] = useState(false);
     const [identifier, setIdentifier] = useState("");
@@ -69,13 +71,27 @@ const SignInForm: React.FC<SignInFormProps> = ({
             isOpen={isOpen}
             onClose={handleCloseSignInModal}
             className={
-                showPasswordModal ? "signin__form--password" : "signin__form"
+                showForgotPasswordModal
+                    ? "signin__form--forgot_password"
+                    : showPasswordModal
+                    ? "signin__form--password"
+                    : "signin__form"
             }
         >
             <div className="signin__container">
                 <img src={Logo} className="signin__logo" alt="logo" />
 
-                {isSigningIn ? (
+                {showForgotPasswordModal ? (
+                    <ForgotPassword
+                        identifier={identifier}
+                        onIdentifierChange={setIdentifier}
+                        onSubmit={() => {
+                            console.log("Reset link sent to:", identifier);
+                            setForgotPasswordModal(false);
+                            setIdentifier("");
+                        }}
+                    />
+                ) : isSigningIn ? (
                     <>
                         <h1
                             className={
@@ -96,7 +112,9 @@ const SignInForm: React.FC<SignInFormProps> = ({
                                     setIdentifierError("");
                                 }}
                                 onNextClick={handleNextClick}
-                                onForgotPassword={() => {}}
+                                onForgotPassword={() =>
+                                    setForgotPasswordModal(true)
+                                }
                                 onSignUpClick={() => setIsSigningIn(false)}
                             />
                         ) : (
@@ -105,7 +123,9 @@ const SignInForm: React.FC<SignInFormProps> = ({
                                 password={password}
                                 passwordError={passwordError}
                                 onPasswordChange={setPassword}
-                                onForgotPassword={() => {}}
+                                onForgotPassword={() =>
+                                    setForgotPasswordModal(true)
+                                }
                                 onLogin={handleLogin}
                                 onSignUpClick={() => setIsSigningIn(false)}
                             />
