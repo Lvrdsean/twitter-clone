@@ -23,11 +23,7 @@ const SignInStepTwo: React.FC<SignInStepTwoProps> = ({
 }) => {
     return (
         <div className="step_two__container">
-            <Input
-                placeholder="Phone, email, or username"
-                value={identifier}
-                disabled
-            />
+            <Input placeholder="Phone, email, or username" value={identifier} />
             <Input
                 placeholder="Password"
                 type="password"
