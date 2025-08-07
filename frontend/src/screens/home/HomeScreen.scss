@@ -1,0 +1,16 @@
+@use "@sass/colors" as colors;
+
+.home {
+    &__screen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    &__logo {
+        margin-top: 10px;
+        width: 30px;
+        align-self: center;
+    }
+}

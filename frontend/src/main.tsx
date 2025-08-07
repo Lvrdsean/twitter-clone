@@ -1,10 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import "@sass/index.scss";
-import Login from "./screens/login/LoginScreen";
+import App from "./App";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <Login />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </StrictMode>
 );
