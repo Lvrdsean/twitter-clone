@@ -6,6 +6,7 @@ import Apple from "@/assets/images/apple-logo.png";
 import Modal from "../../../components/modal/Modal";
 import { useState } from "react";
 import Input from "../../../components/input/Input";
+import { useNavigate } from "react-router-dom";
 
 type SignInFormProps = {
     isOpen: boolean;
@@ -18,14 +19,23 @@ const SignInForm: React.FC<SignInFormProps> = ({
     onClose,
     onOpenCreateModal,
 }) => {
-    // state
-    const [isSigningIn, setIsSigningIn] = useState(true);
-    const [identifier, setIdentifier] = useState("");
+    const navigate = useNavigate();
 
-    // event handlers
+    const [isSigningIn, setIsSigningIn] = useState(true);
+    const [showPasswordModal, setShowPasswordModal] = useState(false);
+    const [identifier, setIdentifier] = useState("");
+    const [identifierError, setIdentifierError] = useState("");
+    const [password, setPassword] = useState("");
+    const [passwordError, setPasswordError] = useState("");
+
     const handleCloseSignInModal = () => {
         onClose();
         setIsSigningIn(true);
+        setShowPasswordModal(false);
+        setIdentifier("");
+        setIdentifierError("");
+        setPassword("");
+        setPasswordError("");
     };
 
     const handleOpenCreateModal = () => {
@@ -33,66 +43,154 @@ const SignInForm: React.FC<SignInFormProps> = ({
         onOpenCreateModal();
     };
 
+    const handleNextClick = () => {
+        if (identifier.trim().toLowerCase() === "test@email.com") {
+            setIdentifierError("");
+            setShowPasswordModal(true);
+        } else {
+            setIdentifierError("We couldn’t find your account.");
+            setShowPasswordModal(false);
+        }
+    };
+
+    const handleLogin = () => {
+        if (password === "password") {
+            setPasswordError("");
+            navigate("/home");
+        } else {
+            setPasswordError("Incorrect password. Please try again.");
+        }
+    };
+
     return (
         <Modal
             isOpen={isOpen}
             onClose={handleCloseSignInModal}
-            className="signin__form"
+            className={
+                showPasswordModal ? "signin__form--password" : "signin__form"
+            }
         >
             <div className="signin__container">
                 <img src={Logo} className="signin__logo" alt="logo" />
 
                 {isSigningIn ? (
                     <>
-                        <h1>Sign in to X</h1>
-                        <Button onClick={() => {}} className="signin__button">
-                            <img
-                                src={Google}
-                                className="signin__logo--apple_google"
-                                alt="google"
-                            />
-                            Sign in with Google
-                        </Button>
-                        <Button
-                            onClick={() => {}}
-                            className="signin__button--apple"
+                        <h1
+                            className={showPasswordModal ? "signin__title" : ""}
                         >
-                            <img
-                                src={Apple}
-                                className="signin__logo--apple_google"
-                                alt="apple"
-                            />
-                            Sign in with Apple
-                        </Button>
-                        <div className="signin__divider">
-                            <p>OR</p>
-                        </div>
-                        <Input
-                            placeholder="Phone, email, or username"
-                            value={identifier}
-                            onChange={(e) => setIdentifier(e.target.value)}
-                        />
-                        <Button
-                            onClick={() => {}}
-                            className="p1-b signin__button--next"
-                        >
-                            Next
-                        </Button>
-                        <Button
-                            onClick={() => {}}
-                            className="p1-b signin__button--forgot_password"
-                        >
-                            Forgot password?
-                        </Button>
-                        <p className="p1-r signin__terms--no_account">
-                            Don't have an account?
-                            <Button
-                                onClick={() => setIsSigningIn(false)}
-                                className="p1-r signin__link"
-                            >
-                                Sign up
-                            </Button>
-                        </p>
+                            {showPasswordModal
+                                ? "Enter your password"
+                                : "Sign in to X"}
+                        </h1>
+
+                        {!showPasswordModal ? (
+                            <>
+                                <Button
+                                    onClick={() => {}}
+                                    className="signin__button"
+                                >
+                                    <img
+                                        src={Google}
+                                        className="signin__logo--apple_google"
+                                        alt="google"
+                                    />
+                                    Sign in with Google
+                                </Button>
+                                <Button
+                                    onClick={() => {}}
+                                    className="signin__button--apple"
+                                >
+                                    <img
+                                        src={Apple}
+                                        className="signin__logo--apple_google"
+                                        alt="apple"
+                                    />
+                                    Sign in with Apple
+                                </Button>
+                                <div className="signin__divider">
+                                    <p>OR</p>
+                                </div>
+                                <Input
+                                    placeholder="Phone, email, or username"
+                                    value={identifier}
+                                    onChange={(e) => {
+                                        setIdentifier(e.target.value);
+                                        setIdentifierError("");
+                                    }}
+                                    hasError={!!identifierError}
+                                    error={identifierError}
+                                    onEnterPress={handleNextClick}
+                                />
+                                <Button
+                                    onClick={handleNextClick}
+                                    className="p1-b signin__button--next"
+                                >
+                                    Next
+                                </Button>
+                                <Button
+                                    onClick={() => {}}
+                                    className="p1-b signin__button--forgot_password"
+                                >
+                                    Forgot password?
+                                </Button>
+                                <p className="p1-r signin__terms--no_account">
+                                    Don't have an account?
+                                    <Button
+                                        onClick={() => setIsSigningIn(false)}
+                                        className="p1-r signin__link"
+                                    >
+                                        Sign up
+                                    </Button>
+                                </p>
+                            </>
+                        ) : (
+                            <div className="signin__container--password">
+                                <Input
+                                    placeholder="Phone, email, or username"
+                                    value={identifier}
+                                    onChange={(e) => {
+                                        setIdentifier(e.target.value);
+                                        setIdentifierError("");
+                                    }}
+                                    hasError={!!identifierError}
+                                    error={identifierError}
+                                />
+                                <Input
+                                    placeholder="Password"
+                                    type="password"
+                                    value={password}
+                                    onChange={(e) => {
+                                        setPassword(e.target.value);
+                                        setPasswordError("");
+                                    }}
+                                    hasError={!!passwordError}
+                                    error={passwordError}
+                                    isPassword={true}
+                                    onEnterPress={handleLogin}
+                                />
+                                <Button
+                                    onClick={() => {}}
+                                    className="p1-r signin__link--forgot_password"
+                                >
+                                    Forgot password?
+                                </Button>
+                                <Button
+                                    onClick={handleLogin}
+                                    className="p1-b signin__button--login"
+                                >
+                                    Log in
+                                </Button>
+                                <p className="p1-r signin__terms--no_account_password">
+                                    Don't have an account?
+                                    <Button
+                                        onClick={() => setIsSigningIn(false)}
+                                        className="p1-r signin__link"
+                                    >
+                                        Sign up
+                                    </Button>
+                                </p>
+                            </div>
+                        )}
                     </>
                 ) : (
                     <>
