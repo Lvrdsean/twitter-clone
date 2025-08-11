@@ -38,16 +38,16 @@
             content: "";
             flex: 1;
             height: 1px;
-            background-color: colors.$gray;
+            background-color: colors.$gray-1;
         }
 
         p {
-            color: colors.$gray;
+            color: colors.$gray-1;
         }
     }
 
     &__terms {
-        color: colors.$gray;
+        color: colors.$gray-1;
         margin-top: 15%;
     }
 
