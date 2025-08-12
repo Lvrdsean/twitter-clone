@@ -2,7 +2,7 @@ import "./SignInForm.scss";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Modal from "../../../components/modal/Modal";
-import Logo from "@/assets/images/logo-white.png";
+import Logo from "../../../assets/svg/Logo";
 import ForgotPassword from "./ForgotPassword";
 import SignInStepOne from "./SignInStepOne";
 import SignInStepTwo from "./SignInStepTwo";
@@ -79,7 +79,7 @@ const SignInForm: React.FC<SignInFormProps> = ({
             }
         >
             <div className="signin__container">
-                <img src={Logo} className="signin__logo" alt="logo" />
+                <Logo className="signin__logo" />
 
                 {showForgotPasswordModal ? (
                     <ForgotPassword

@@ -1,6 +1,6 @@
 import "./CreateAccountForm.scss";
 import Button from "../../../components/button/Button";
-import Logo from "@/assets/images/logo-white.png";
+import Logo from "../../../assets/svg/Logo";
 import Modal from "../../../components/modal/Modal";
 import { useEffect, useState } from "react";
 import Input from "../../../components/input/Input";
@@ -184,7 +184,7 @@ const CreateAccountForm: React.FC<CreateAccountFormProps> = ({
             className="create__form"
         >
             <div className="create__container">
-                <img src={Logo} className="create__logo" alt="logo" />
+                <Logo className="create__logo" />
                 <h1 className="create__title">Create your account</h1>
                 <Input
                     placeholder="Name"

@@ -1,7 +1,7 @@
 import "./LoginContent.scss";
 import { ReactNode } from "react";
 import Button from "../../../components/button/Button";
-import Logo from "@/assets/images/logo-white.png";
+import Logo from "../../../assets/svg/Logo";
 import Google from "@/assets/images/google-logo.png";
 import Apple from "@/assets/images/apple-logo.png";
 import AuthButton from "../components/AuthButton";
@@ -19,7 +19,7 @@ const LoginContent: React.FC<LoginContentProps> = ({
 }) => {
     return (
         <div className="content__container">
-            <img src={Logo} className="content__logo" alt="logo" />
+            <Logo className="content__logo" />
             <h2 className="content__account">Create an account</h2>
             <AuthButton
                 onClick={() => {}}
