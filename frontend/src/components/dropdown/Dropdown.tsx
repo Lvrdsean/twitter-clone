@@ -57,7 +57,7 @@ const Dropdown: React.FC<DropdownProps> = ({
                         </option>
                     ))}
                 </select>
-                <ChevronDown className="dropdown__chevron" />
+                <ChevronDown className="dropdown__chevron" fill="#71767b" />
             </div>
             {showError && (
                 <span className={`p2-r ${"dropdown__error"}`}>{error}</span>
