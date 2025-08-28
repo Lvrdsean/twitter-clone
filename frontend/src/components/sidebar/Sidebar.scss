@@ -1,0 +1,31 @@
+@use "@sass/colors" as colors;
+
+.sidebar {
+    flex: 1;
+    padding-left: 8px;
+    padding-right: 8px;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+
+    &__logo_button {
+        justify-content: center;
+        align-items: center;
+        background: none;
+        border-radius: 50%;
+        padding: 14px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(24, 25, 25, 0.9);
+        }
+    }
+
+    &__post_button {
+        padding: 16px;
+        margin-top: 25px;
+        margin-right: 20px;
+        justify-self: stretch;
+    }
+}
