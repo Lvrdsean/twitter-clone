@@ -1,18 +1,7 @@
 import "./HomeScreen.scss";
 import Button from "../../components/button/Button";
-import Logo from "../../assets/svg/Logo";
-import HomeFill from "../../assets/svg/HomeFill";
 import Search from "../../assets/svg/Search";
-import BellOutline from "../../assets/svg/BellOutline";
-import MailOutline from "../../assets/svg/MailOutline";
 import GrokOutline from "../../assets/svg/GrokOutline";
-import ListOutline from "../../assets/svg/ListOutline";
-import BookmarkOutline from "../../assets/svg/BookmarkOutline";
-import BriefcaseOutline from "../../assets/svg/BriefcaseOutline";
-import PeopleOutline from "../../assets/svg/PeopleOutline";
-import VerifiedOutline from "../../assets/svg/VerifiedOutline";
-import PersonOutline from "../../assets/svg/PersonOutline";
-import EllipsisOutline from "../../assets/svg/EllipsisOutline";
 import Profile from "../../assets/images/default-profile.png";
 import Ellipsis from "../../assets/svg/Ellipsis";
 import { useState } from "react";
@@ -25,6 +14,7 @@ import Schedule from "../../assets/svg/Schedule";
 import Location from "../../assets/svg/Location";
 import XCircleFill from "../../assets/svg/XCircleFill";
 import ChevronUp from "../../assets/svg/ChevronUp";
+import Sidebar from "../../components/sidebar/Sidebar";
 
 const Home = () => {
     // state
@@ -41,73 +31,7 @@ const Home = () => {
     return (
         <div className="home__screen">
             <div className="home__sidebar_container">
-                <div className="home__sidebar">
-                    <Button onClick={() => {}} className="home__logo_button">
-                        <Logo />
-                    </Button>
-                    <Button
-                        onClick={() => {}}
-                        className="p1-b home__home_button"
-                    >
-                        <HomeFill /> Home
-                    </Button>
-                    <Button onClick={() => {}} className="home__home_button">
-                        <Search fill="#ffffffff" /> Explore
-                    </Button>
-                    <Button onClick={() => {}} className="home__home_button">
-                        <BellOutline /> Notifications
-                    </Button>
-                    <Button onClick={() => {}} className="home__home_button">
-                        <MailOutline /> Messages
-                    </Button>
-                    <Button onClick={() => {}} className="home__home_button">
-                        <GrokOutline fill="#ffffffff" /> Grok
-                    </Button>
-                    <Button onClick={() => {}} className="home__home_button">
-                        <ListOutline /> Lists
-                    </Button>
-                    <Button onClick={() => {}} className="home__home_button">
-                        <BookmarkOutline /> Bookmarks
-                    </Button>
-                    <Button onClick={() => {}} className="home__home_button">
-                        <BriefcaseOutline /> Jobs
-                    </Button>
-                    <Button onClick={() => {}} className="home__home_button">
-                        <PeopleOutline /> Communities
-                    </Button>
-                    <Button onClick={() => {}} className="home__home_button">
-                        <Logo className="home__logo" /> Premium
-                    </Button>
-                    <Button onClick={() => {}} className="home__home_button">
-                        <VerifiedOutline /> Verified Orgs
-                    </Button>
-                    <Button onClick={() => {}} className="home__home_button">
-                        <PersonOutline /> Profile
-                    </Button>
-                    <Button onClick={() => {}} className="home__home_button">
-                        <EllipsisOutline /> More
-                    </Button>
-                    <Button
-                        onClick={() => {}}
-                        className="p1-b home__post_button"
-                    >
-                        Post
-                    </Button>
-                    <div className="home__profile_container">
-                        <img
-                            src={Profile}
-                            className="home__profile"
-                            alt="profile"
-                        />
-                        <div className="home__user_container">
-                            <p className="p1-b">{truncate("John Doe", 18)}</p>
-                            <p className="home__username">
-                                {truncate("@johndoe", 18)}
-                            </p>
-                        </div>
-                        <Ellipsis className="home__ellipsis" fill="#ffffffff" />
-                    </div>
-                </div>
+                <Sidebar />
             </div>
             <div className="home__timeline">
                 <div className="home__preferences">

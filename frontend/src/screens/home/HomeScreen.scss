@@ -15,51 +15,9 @@
         min-height: 100vh;
     }
 
-    &__sidebar {
-        flex: 1;
-        padding-left: 8px;
-        padding-right: 8px;
-        color: white;
-        text-align: center;
-        min-height: 100vh;
-    }
-
-    &__logo_button {
-        justify-content: center;
-        align-items: center;
-        background: none;
-        border-radius: 50%;
-        padding: 14px;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-            background-color: rgba(24, 25, 25, 0.9);
-        }
-    }
-
     &__logo {
         width: 32px;
         height: 32px;
-    }
-
-    &__home_button {
-        margin-top: 5px;
-        font-size: 20px;
-        gap: 15px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-right: 32px;
-        color: white;
-        justify-content: center;
-        align-items: center;
-        background: none;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-            background-color: rgba(24, 25, 25, 0.9);
-        }
     }
 
     &__post_button {
@@ -77,29 +35,6 @@
         }
     }
 
-    &__profile_container {
-        display: flex;
-        flex-direction: row;
-        margin-top: 360px;
-        font-size: 20px;
-        gap: 10px;
-        border-radius: 50px;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        padding-left: 12px;
-        padding-right: 8px;
-        color: white;
-        justify-content: flex-start;
-        align-items: center;
-        background: none;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-            background-color: rgba(24, 25, 25, 0.9);
-        }
-    }
-
     &__profile {
         width: 40px;
         height: 40px;
@@ -108,15 +43,6 @@
         &--button {
             padding: 0px;
         }
-    }
-
-    &__user_container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__username {
-        color: colors.$gray-1;
     }
 
     &__ellipsis {
