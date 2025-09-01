@@ -6,7 +6,6 @@ import Profile from "../../assets/images/default-profile.png";
 import Ellipsis from "../../assets/svg/Ellipsis";
 import { useEffect, useState } from "react";
 import { Tab } from "../../types/tab";
-import Globe from "../../assets/svg/Globe";
 import Media from "../../assets/svg/Media";
 import Gif from "../../assets/svg/Gif";
 import Poll from "../../assets/svg/Poll";
@@ -17,6 +16,7 @@ import XCircleFill from "../../assets/svg/XCircleFill";
 import ChevronUp from "../../assets/svg/ChevronUp";
 import Sidebar from "../../components/sidebar/Sidebar";
 import TabSelector from "./components/TabSelector";
+import Composer from "./components/Composer";
 
 const Home = () => {
     // state
@@ -24,7 +24,7 @@ const Home = () => {
         const saved = localStorage.getItem("activeTab");
         return saved === "forYou" || saved === "following" ? saved : "forYou";
     }); // Initialize from localStorage if available
-    const [focused, setFocused] = useState(false);
+    const [isComposing, setIsComposing] = useState(false);
     const [query, setQuery] = useState("");
 
     // Save any changes to localStorage
@@ -47,38 +47,10 @@ const Home = () => {
                     setActiveTab={setActiveTab}
                 />
                 <div className="home__timeline_content">
-                    <div className="home__create_post_container">
-                        <Button
-                            onClick={() => {}}
-                            className="home__profile--button"
-                        >
-                            <img
-                                src={Profile}
-                                className="home__profile"
-                                alt="profile"
-                            />
-                        </Button>
-                        <div
-                            className={`home__composer ${
-                                focused ? "home__composer--divider" : ""
-                            }`}
-                        >
-                            <input
-                                type="text"
-                                className="home__composer_input"
-                                placeholder="What's happening?"
-                                onFocus={() => setFocused(true)}
-                            />
-                            {focused && (
-                                <Button
-                                    onClick={() => {}}
-                                    className="home__hint_button"
-                                >
-                                    <Globe /> Everyone can reply
-                                </Button>
-                            )}
-                        </div>
-                    </div>
+                    <Composer
+                        isComposing={isComposing}
+                        setIsComposing={setIsComposing}
+                    />
                     <div className="home__post_options">
                         <Button
                             onClick={() => {}}
