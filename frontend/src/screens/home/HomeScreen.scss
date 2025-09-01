@@ -25,14 +25,6 @@
         margin-top: 25px;
         margin-right: 20px;
         justify-self: stretch;
-
-        &--options {
-            padding-top: 8px;
-            padding-bottom: 8px;
-            padding-left: 16px;
-            padding-right: 16px;
-            justify-self: flex-end;
-        }
     }
 
     &__profile {
@@ -66,65 +58,6 @@
 
     &__timeline_content {
         width: 100%;
-    }
-
-    &__post_options {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        justify-content: flex-start;
-        align-items: center;
-        box-shadow: 0 0.5px 0 0 colors.$gray-2;
-        padding-bottom: 10px;
-    }
-
-    &__media_button {
-        justify-content: center;
-        align-items: center;
-        background: none;
-        border-radius: 50%;
-        padding: 10px;
-        margin-left: 48px;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-            background-color: rgba(3, 16, 24, 0.9);
-        }
-    }
-
-    &__option_button {
-        justify-content: center;
-        align-items: center;
-        background: none;
-        border-radius: 50%;
-        padding: 10px;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-            background-color: rgba(3, 16, 24, 0.9);
-        }
-    }
-
-    &__location_button {
-        justify-content: center;
-        align-items: center;
-        background: none;
-        border-radius: 50%;
-        padding: 10px;
-        margin-right: 40%;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-            background-color: rgba(3, 16, 24, 0.9);
-        }
-    }
-
-    &__grok {
-        width: 16px;
-        height: 16px;
     }
 
     &__explore {

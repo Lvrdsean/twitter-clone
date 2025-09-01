@@ -1,22 +1,16 @@
 import "./HomeScreen.scss";
 import Button from "../../components/button/Button";
 import Search from "../../assets/svg/Search";
-import GrokOutline from "../../assets/svg/GrokOutline";
 import Profile from "../../assets/images/default-profile.png";
 import Ellipsis from "../../assets/svg/Ellipsis";
 import { useEffect, useState } from "react";
 import { Tab } from "../../types/tab";
-import Media from "../../assets/svg/Media";
-import Gif from "../../assets/svg/Gif";
-import Poll from "../../assets/svg/Poll";
-import Smiley from "../../assets/svg/Smiley";
-import Schedule from "../../assets/svg/Schedule";
-import Location from "../../assets/svg/Location";
 import XCircleFill from "../../assets/svg/XCircleFill";
 import ChevronUp from "../../assets/svg/ChevronUp";
 import Sidebar from "../../components/sidebar/Sidebar";
 import TabSelector from "./components/TabSelector";
 import Composer from "./components/Composer";
+import PostOptions from "./components/PostOptions";
 
 const Home = () => {
     // state
@@ -51,59 +45,7 @@ const Home = () => {
                         isComposing={isComposing}
                         setIsComposing={setIsComposing}
                     />
-                    <div className="home__post_options">
-                        <Button
-                            onClick={() => {}}
-                            className="home__media_button"
-                        >
-                            <Media />
-                        </Button>
-                        <Button
-                            onClick={() => {}}
-                            className="home__option_button"
-                        >
-                            <Gif />
-                        </Button>
-                        <Button
-                            onClick={() => {}}
-                            className="home__option_button"
-                        >
-                            <GrokOutline
-                                className="home__grok"
-                                fill="#1d9bf0"
-                            />
-                        </Button>
-                        <Button
-                            onClick={() => {}}
-                            className="home__option_button"
-                        >
-                            <Poll />
-                        </Button>
-                        <Button
-                            onClick={() => {}}
-                            className="home__option_button"
-                        >
-                            <Smiley />
-                        </Button>
-                        <Button
-                            onClick={() => {}}
-                            className="home__option_button"
-                        >
-                            <Schedule />
-                        </Button>
-                        <Button
-                            onClick={() => {}}
-                            className="home__location_button"
-                        >
-                            <Location />
-                        </Button>
-                        <Button
-                            onClick={() => {}}
-                            className="p1-b home__post_button--options"
-                        >
-                            Post
-                        </Button>
-                    </div>
+                    <PostOptions />
                 </div>
             </div>
             <div className="home__explore">
