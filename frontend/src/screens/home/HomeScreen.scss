@@ -64,45 +64,6 @@
         min-height: 100vh;
     }
 
-    &__preferences {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-        box-shadow: 0 0.5px 0 0 colors.$gray-2;
-    }
-
-    &__tab_button {
-        border-radius: 0;
-        background: none;
-        border: none;
-        width: 100%;
-        color: colors.$gray-1;
-        padding: 16px;
-        cursor: pointer;
-        position: relative;
-        transition: background-color 0.2s;
-
-        &:hover {
-            background-color: rgba(255, 255, 255, 0.08);
-        }
-
-        &.active {
-            color: white;
-            font-weight: 700;
-
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                height: 4px;
-                width: 100%;
-                background-color: #1d9bf0;
-                border-radius: 9999px;
-            }
-        }
-    }
-
     &__timeline_content {
         width: 100%;
     }

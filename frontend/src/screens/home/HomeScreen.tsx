@@ -4,7 +4,8 @@ import Search from "../../assets/svg/Search";
 import GrokOutline from "../../assets/svg/GrokOutline";
 import Profile from "../../assets/images/default-profile.png";
 import Ellipsis from "../../assets/svg/Ellipsis";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Tab } from "../../types/tab";
 import Globe from "../../assets/svg/Globe";
 import Media from "../../assets/svg/Media";
 import Gif from "../../assets/svg/Gif";
@@ -15,14 +16,21 @@ import Location from "../../assets/svg/Location";
 import XCircleFill from "../../assets/svg/XCircleFill";
 import ChevronUp from "../../assets/svg/ChevronUp";
 import Sidebar from "../../components/sidebar/Sidebar";
+import TabSelector from "./components/TabSelector";
 
 const Home = () => {
     // state
-    const [activeTab, setActiveTab] = useState<"forYou" | "following">(
-        "forYou"
-    );
+    const [activeTab, setActiveTab] = useState<Tab>(() => {
+        const saved = localStorage.getItem("activeTab");
+        return saved === "forYou" || saved === "following" ? saved : "forYou";
+    }); // Initialize from localStorage if available
     const [focused, setFocused] = useState(false);
     const [query, setQuery] = useState("");
+
+    // Save any changes to localStorage
+    useEffect(() => {
+        localStorage.setItem("activeTab", activeTab);
+    }, [activeTab]);
 
     // event handlers
     const truncate = (str: string, maxLength: number) =>
@@ -34,24 +42,10 @@ const Home = () => {
                 <Sidebar />
             </div>
             <div className="home__timeline">
-                <div className="home__preferences">
-                    <Button
-                        onClick={() => setActiveTab("forYou")}
-                        className={`home__tab_button ${
-                            activeTab === "forYou" ? "active" : ""
-                        }`}
-                    >
-                        For you
-                    </Button>
-                    <Button
-                        onClick={() => setActiveTab("following")}
-                        className={`home__tab_button ${
-                            activeTab === "following" ? "active" : ""
-                        }`}
-                    >
-                        Following
-                    </Button>
-                </div>
+                <TabSelector
+                    activeTab={activeTab}
+                    setActiveTab={setActiveTab}
+                />
                 <div className="home__timeline_content">
                     <div className="home__create_post_container">
                         <Button
