@@ -37,17 +37,6 @@
         }
     }
 
-    &__ellipsis {
-        margin-left: auto;
-
-        &--button {
-            &:hover {
-                fill: colors.$blue;
-                background-color: rgba(3, 16, 24, 0.9);
-            }
-        }
-    }
-
     &__timeline {
         display: flex;
         flex-direction: column;
@@ -69,74 +58,10 @@
         min-height: 100vh;
     }
 
-    &__trends {
-        display: flex;
-        flex-direction: column;
-        border-radius: 15px;
-        box-shadow: inset 0 0 0 0.5px colors.$gray-2;
-        align-items: flex-start;
-        text-align: start;
-        margin-top: 15px;
-        padding-left: 1px;
-        padding-right: 1px;
-    }
-
     &__explore_header {
         margin-top: 12px;
         margin-left: 15px;
         margin-bottom: 8px;
-    }
-
-    &__trends_container {
-        width: 100%;
-    }
-
-    &__trend {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        padding-left: 15px;
-        cursor: pointer;
-
-        &:hover {
-            background-color: rgba(24, 25, 25, 0.9);
-        }
-    }
-
-    &__trend_name_container {
-        display: flex;
-        flex-direction: row;
-        position: relative;
-    }
-
-    &__ellipsis_button {
-        position: absolute;
-        top: 50%;
-        left: 88%;
-        transform: translateY(-50%);
-        justify-content: center;
-        align-items: center;
-        background: none;
-        border-radius: 50%;
-        padding: 5px;
-        border: none;
-        cursor: pointer;
-
-        &:hover {
-            background-color: rgba(3, 16, 24, 0.9);
-        }
-    }
-
-    &__gray {
-        color: colors.$gray-1;
-        margin-bottom: 5px;
-
-        &--tweets {
-            margin-top: 5px;
-            color: colors.$gray-1;
-        }
     }
 
     &__link {

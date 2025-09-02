@@ -1,7 +1,6 @@
 import "./HomeScreen.scss";
 import Button from "../../components/button/Button";
 import Profile from "../../assets/images/default-profile.png";
-import Ellipsis from "../../assets/svg/Ellipsis";
 import { useEffect, useState } from "react";
 import { Tab } from "../../types/tab";
 import ChevronUp from "../../assets/svg/ChevronUp";
@@ -11,6 +10,7 @@ import Composer from "./components/Composer";
 import PostOptions from "./components/PostOptions";
 import Searchbar from "../../components/searchbar/Searchbar";
 import Premium from "./components/Premium";
+import Trends from "./components/Trends";
 
 const Home = () => {
     // state
@@ -51,76 +51,7 @@ const Home = () => {
             <div className="home__explore">
                 <Searchbar query={query} setQuery={setQuery} />
                 <Premium />
-                <div className="home__trends">
-                    <div className="home__trends_container">
-                        <h3 className="home__explore_header">
-                            What's happening
-                        </h3>
-                        <div className="home__trend">
-                            <div className="home__trend_name_container">
-                                <p className="p2-r home__gray">
-                                    Music · Trending
-                                </p>
-                                <Button
-                                    onClick={() => {}}
-                                    className="home__ellipsis_button"
-                                >
-                                    <Ellipsis
-                                        className="home__ellipsis--button"
-                                        fill="#71767b"
-                                    />
-                                </Button>
-                            </div>
-                            <p className="p1-b">Tyler, the Creator</p>
-                            <p className="p2-r home__gray--tweets">
-                                1.8M tweets
-                            </p>
-                        </div>
-                        <div className="home__trend">
-                            <div className="home__trend_name_container">
-                                <p className="p2-r home__gray">
-                                    Sports · Trending
-                                </p>
-                                <Button
-                                    onClick={() => {}}
-                                    className="home__ellipsis_button"
-                                >
-                                    <Ellipsis
-                                        className="home__ellipsis--button"
-                                        fill="#71767b"
-                                    />
-                                </Button>
-                            </div>
-                            <p className="p1-b">Jalen Brunson</p>
-                            <p className="p2-r home__gray--tweets">
-                                1.4M tweets
-                            </p>
-                        </div>
-                        <div className="home__trend">
-                            <div className="home__trend_name_container">
-                                <p className="p2-r home__gray">
-                                    Gaming · Trending
-                                </p>
-                                <Button
-                                    onClick={() => {}}
-                                    className="home__ellipsis_button"
-                                >
-                                    <Ellipsis
-                                        className="home__ellipsis--button"
-                                        fill="#71767b"
-                                    />
-                                </Button>
-                            </div>
-                            <p className="p1-b">Battlefield 6</p>
-                            <p className="p2-r home__gray--tweets">
-                                1.2M tweets
-                            </p>
-                        </div>
-                        <Button onClick={() => {}} className="p1-r home__link">
-                            Show more
-                        </Button>
-                    </div>
-                </div>
+                <Trends />
                 <div className="home__wtf">
                     <h3 className="home__explore_header">Who to follow</h3>
                     <div className="home__wtf_container">
