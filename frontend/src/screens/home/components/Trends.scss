@@ -1,0 +1,100 @@
+@use "@sass/colors" as colors;
+
+.trends {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+        box-shadow: inset 0 0 0 0.5px colors.$gray-2;
+        align-items: flex-start;
+        text-align: start;
+        margin-top: 15px;
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+
+    &__content {
+        width: 100%;
+    }
+
+    &__header {
+        margin-top: 12px;
+        margin-left: 15px;
+        margin-bottom: 8px;
+    }
+
+    &__trend_container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 15px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(24, 25, 25, 0.9);
+        }
+    }
+
+    &__category_container {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    }
+
+    &__category {
+        color: colors.$gray-1;
+        margin-bottom: 5px;
+    }
+
+    &__ellipsis_button {
+        position: absolute;
+        top: 50%;
+        left: 88%;
+        transform: translateY(-50%);
+        justify-content: center;
+        align-items: center;
+        background: none;
+        border-radius: 50%;
+        padding: 5px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(3, 16, 24, 0.9);
+        }
+    }
+
+    &__ellipsis {
+        margin-left: auto;
+
+        &:hover {
+            fill: colors.$blue;
+            background-color: rgba(3, 16, 24, 0.9);
+        }
+    }
+
+    &__tweets {
+        margin-top: 5px;
+        color: colors.$gray-1;
+    }
+
+    &__link {
+        display: inline;
+        background: none;
+        text-decoration: none;
+        white-space: nowrap;
+        color: colors.$blue;
+        border-radius: 0px;
+        padding: 0px;
+        margin-top: 20px;
+        margin-left: 16px;
+        margin-bottom: 15px;
+
+        &:hover {
+            text-decoration: underline;
+            opacity: 1;
+        }
+    }
+}
