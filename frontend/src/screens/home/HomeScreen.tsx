@@ -1,16 +1,15 @@
 import "./HomeScreen.scss";
 import Button from "../../components/button/Button";
-import Search from "../../assets/svg/Search";
 import Profile from "../../assets/images/default-profile.png";
 import Ellipsis from "../../assets/svg/Ellipsis";
 import { useEffect, useState } from "react";
 import { Tab } from "../../types/tab";
-import XCircleFill from "../../assets/svg/XCircleFill";
 import ChevronUp from "../../assets/svg/ChevronUp";
 import Sidebar from "../../components/sidebar/Sidebar";
 import TabSelector from "./components/TabSelector";
 import Composer from "./components/Composer";
 import PostOptions from "./components/PostOptions";
+import Searchbar from "../../components/searchbar/Searchbar";
 
 const Home = () => {
     // state
@@ -49,24 +48,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="home__explore">
-                <div className="home__search_container">
-                    <Search className="home__search_icon" fill="#656a6e" />
-                    <input
-                        type="text"
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        className="home__search"
-                        placeholder="Search"
-                    />
-                    {query && (
-                        <Button
-                            className="home__clear_button"
-                            onClick={() => setQuery("")}
-                        >
-                            <XCircleFill className="home__clear_icon" />
-                        </Button>
-                    )}
-                </div>
+                <Searchbar query={query} setQuery={setQuery} />
                 <div className="home__premium">
                     <h3>Subscribe to Premium</h3>
                     <p>
