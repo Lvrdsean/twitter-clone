@@ -1,6 +1,6 @@
 import "./Trends.scss";
 import Button from "../../../components/button/Button";
-import { trends } from "../../../types/trends";
+import { trends } from "../../../types/explore";
 import Ellipsis from "../../../assets/svg/Ellipsis";
 
 const Trends = () => {
