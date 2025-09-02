@@ -10,6 +10,7 @@ import TabSelector from "./components/TabSelector";
 import Composer from "./components/Composer";
 import PostOptions from "./components/PostOptions";
 import Searchbar from "../../components/searchbar/Searchbar";
+import Premium from "./components/Premium";
 
 const Home = () => {
     // state
@@ -49,19 +50,7 @@ const Home = () => {
             </div>
             <div className="home__explore">
                 <Searchbar query={query} setQuery={setQuery} />
-                <div className="home__premium">
-                    <h3>Subscribe to Premium</h3>
-                    <p>
-                        Subscribe to unlock new features and if eligible,
-                        receive a share of revenue.
-                    </p>
-                    <Button
-                        onClick={() => {}}
-                        className=" p1-b home__subscribe_button"
-                    >
-                        Subscribe
-                    </Button>
-                </div>
+                <Premium />
                 <div className="home__trends">
                     <div className="home__trends_container">
                         <h3 className="home__explore_header">
