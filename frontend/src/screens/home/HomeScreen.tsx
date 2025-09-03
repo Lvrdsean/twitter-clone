@@ -11,6 +11,7 @@ import Searchbar from "../../components/searchbar/Searchbar";
 import Premium from "./components/Premium";
 import Trends from "./components/Trends";
 import WhoToFollow from "./components/WhoToFollow";
+import Footer from "./components/Footer";
 
 const Home = () => {
     // state
@@ -49,27 +50,7 @@ const Home = () => {
                 <Premium />
                 <Trends />
                 <WhoToFollow />
-                <footer>
-                    <p className={`p3-r ${"home__footer_text"}`}>
-                        <span className="home__footer_link">
-                            Terms of Service
-                        </span>
-                        <span>|</span>
-                        <span className="home__footer_link">
-                            Privacy Policy
-                        </span>
-                        <span>|</span>
-                        <span className="home__footer_link">Cookie Policy</span>
-                        <span>|</span>
-                        <span className="home__footer_link">Accessibility</span>
-                        <span>|</span>
-                        <span className="home__footer_link">Ads Info</span>
-                        <span>|</span>
-                        <span className="home__footer_link">More ...</span>
-                        <span>|</span>
-                        <span>© 2025 LVRD Corp.</span>
-                    </p>
-                </footer>
+                <Footer />
             </div>
             <div className="home__messages">
                 <div className="home__messages_container">
