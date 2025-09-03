@@ -1,0 +1,27 @@
+@use "@sass/colors" as colors;
+
+.footer {
+    &__text {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        color: colors.$gray-1;
+        margin-top: 5%;
+        gap: 4px;
+
+        span {
+            white-space: nowrap;
+        }
+    }
+
+    &__link {
+        color: inherit;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
