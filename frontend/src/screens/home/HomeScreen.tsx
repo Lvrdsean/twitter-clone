@@ -1,8 +1,6 @@
 import "./HomeScreen.scss";
-import Button from "../../components/button/Button";
 import { useEffect, useState } from "react";
 import { Tab } from "../../types/tab";
-import ChevronUp from "../../assets/svg/ChevronUp";
 import Sidebar from "../../components/sidebar/Sidebar";
 import TabSelector from "./components/TabSelector";
 import Composer from "./components/Composer";
@@ -12,6 +10,7 @@ import Premium from "./components/Premium";
 import Trends from "./components/Trends";
 import WhoToFollow from "./components/WhoToFollow";
 import Footer from "./components/Footer";
+import MessagesDock from "./components/MessagesDock";
 
 const Home = () => {
     // state
@@ -53,12 +52,7 @@ const Home = () => {
                 <Footer />
             </div>
             <div className="home__messages">
-                <div className="home__messages_container">
-                    <h3>Messages</h3>
-                    <Button onClick={() => {}} className="home__chevron_button">
-                        <ChevronUp fill="#ffffffff" />
-                    </Button>
-                </div>
+                <MessagesDock />
             </div>
         </div>
     );
