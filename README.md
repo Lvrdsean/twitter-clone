@@ -2,7 +2,7 @@
 
 This is a Twitter clone that I've created with React, TypeScript, SASS & Rust to demonstrate my full stack ability to build scalable frontends and backends.
 
-## How to Run
+## How to Run 🚀
 
 **Step 1:**  
 You need to navigate to the frontend directory:  
@@ -16,7 +16,7 @@ Then you need to install all of the project's dependencies:
 Finally you can run the local development server:  
 `yarn dev`
 
-## Known Issues/Future Features
+## Known Issues/Future Features 👾
 
 1.  UI responsiveness breaks on **Home Screen** below 1440p.
     > I have been developing on a **1440p monitor** and will make sure 1080p and everything in between on desktop works. The goal is to make sure that even if the website isn't in a maximized window, things are displayed correctly. Mobile will be neglected as I'm only developing this for desktop only.
