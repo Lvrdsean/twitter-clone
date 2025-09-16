@@ -6,15 +6,21 @@ This is a Twitter clone that I've created with React, TypeScript, SASS & Rust to
 
 **Step 1:**  
 You need to navigate to the frontend directory:  
-`cd frontend`
+```
+cd frontend
+```
 
 **Step 2:**  
 Then you need to install all of the project's dependencies:  
-`yarn install`
+```
+yarn install
+```
 
 **Step 3:**  
 Finally you can run the local development server:  
-`yarn dev`
+```
+yarn dev
+```
 
 ## Known Issues/Future Features 👾
 
